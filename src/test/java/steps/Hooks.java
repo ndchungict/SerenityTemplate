@@ -8,9 +8,6 @@ import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 public class Hooks {
     @Before
     public void setStage() {
-        OnStage.setTheStage(
-                OnlineCast
-                        .whereEveryoneCan(CallAnApi.at(""))
-        );
+        OnStage.setTheStage(new OnlineCast());
     }
 }
