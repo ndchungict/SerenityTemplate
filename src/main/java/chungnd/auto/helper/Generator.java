@@ -1,4 +1,4 @@
-package helper;
+package chungnd.auto.helper;
 
 import com.github.javafaker.Faker;
 

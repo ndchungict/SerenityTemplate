@@ -1,4 +1,4 @@
-package helper;
+package chungnd.auto.helper;
 
 import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
 import net.thucydides.core.util.EnvironmentVariables;
@@ -12,6 +12,7 @@ public class PropertiesManager {
     public static final EnvironmentVariables environmentVariables = SystemEnvironmentVariables.createEnvironmentVariables();
 
     public static String getEnvironmentVariable(String propertyName) {
+
         return EnvironmentSpecificConfiguration.from(environmentVariables).getProperty(propertyName);
     }
 
