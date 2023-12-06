@@ -6,7 +6,7 @@ import auto.utilities.datafaker.providers.VietNamPhoneNumber;
 import auto.utilities.datafaker.providers.VietNamesName;
 
 public class DataFaker extends net.datafaker.Faker {
-    public String randomUUID() {
+    public static String randomUUID() {
         return UUID.randomUUID().toString();
     }
 

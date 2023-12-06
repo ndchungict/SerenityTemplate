@@ -9,7 +9,7 @@ import java.util.Locale;
 public class VietNamesName extends AbstractProvider<BaseProviders> {
     public VietNamesName(BaseProviders faker) {
         super(faker);
-        faker.addPath(Locale.ENGLISH, Paths.get("src/main/resources/datafaker/vietnam_phone_number.yml"));
+        faker.addPath(Locale.ENGLISH, Paths.get("src/main/resources/datafaker/vietnam_name.yml"));
     }
 
     public String firstName() {
