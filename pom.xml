@@ -12,11 +12,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serenity.version>4.0.28</serenity.version>
-        <junit-vintage-engine.version>5.1.0</junit-vintage-engine.version>
-        <junit-platform-suite.version>1.10.0</junit-platform-suite.version>
-        <cucumber-junit-platform-engine.version>7.14.0</cucumber-junit-platform-engine.version>
         <encoding>UTF-8</encoding>
+        <serenity.version>4.0.28</serenity.version>
+        <junit.version>5.10.1</junit.version>
+        <cucumber-junit-platform-engine.version>7.14.1</cucumber-junit-platform-engine.version>
+        <junit-platform>1.10.1</junit-platform>
         <lombok.version>1.18.30</lombok.version>
         <log4j.version>2.22.0</log4j.version>
         <tags></tags>
@@ -24,72 +24,87 @@
     </properties>
 
     <dependencies>
-        <!--        Serenity BDD dependencies-->
+        <!-- Serenity BDD dependencies-->
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
             <version>${serenity.version}</version>
-            <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-cucumber</artifactId>
-            <version>${serenity.version}</version>
-            <scope>test</scope>
-        </dependency>
+
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-screenplay</artifactId>
             <version>${serenity.version}</version>
-            <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-screenplay-webdriver</artifactId>
             <version>${serenity.version}</version>
-            <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-ensure</artifactId>
             <version>${serenity.version}</version>
-            <scope>test</scope>
         </dependency>
+
+        <!-- Serenity with junit-->
         <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-launcher</artifactId>
-            <version>${junit-platform-suite.version}</version>
-            <scope>test</scope>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-junit5</artifactId>
+            <version>${serenity.version}</version>
         </dependency>
+
+        <!-- Serenity with cucumber-->
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-cucumber</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+
+        <!-- Junit5 jupiter api , jupiter engine-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+
+        <!-- Cucumber with Junit Platform-->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit-platform-engine</artifactId>
             <version>${cucumber-junit-platform-engine.version}</version>
-            <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>${junit-platform}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-suite</artifactId>
-            <version>${junit-platform-suite.version}</version>
-            <scope>test</scope>
+            <version>${junit-platform}</version>
         </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit-vintage-engine.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.vintage</groupId>
-            <artifactId>junit-vintage-engine</artifactId>
-            <version>${junit-vintage-engine.version}</version>
-            <scope>test</scope>
-        </dependency>
+
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>3.24.2</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
@@ -106,7 +121,7 @@
             <version>${lombok.version}</version>
         </dependency>
 
-        <!--        Using Log4j2 , Slf4j-->
+        <!-- Using Log4j2 , Slf4j-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
@@ -165,7 +180,6 @@
             <artifactId>mssql-jdbc</artifactId>
             <version>11.2.2.jre17</version>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -173,14 +187,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.2</version>
+                <version>3.1.2</version>
                 <configuration>
                     <skip>true</skip>
                 </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.2.2</version>
+                <version>3.1.2</version>
                 <configuration>
                     <includes>
                         <include>**/*Test.java</include>
@@ -190,6 +204,8 @@
                     </includes>
                     <systemPropertyVariables>
                         <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
+                        <junit.jupiter.extensions.autodetection.enabled>true
+                        </junit.jupiter.extensions.autodetection.enabled>
                     </systemPropertyVariables>
                     <parallel>classes</parallel>
                     <parallel>methods</parallel>
@@ -206,9 +222,9 @@
             </plugin>
             <plugin>
                 <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.11.0</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
                 <configuration>
                     <source>17</source>
                     <target>17</target>

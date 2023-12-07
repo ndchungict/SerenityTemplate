@@ -1,4 +1,4 @@
-package auto.utilities.converter;
+package auto.utilities;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
