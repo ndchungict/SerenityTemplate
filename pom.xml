@@ -17,6 +17,7 @@
         <junit.version>5.10.1</junit.version>
         <cucumber-junit-platform-engine.version>7.14.1</cucumber-junit-platform-engine.version>
         <junit-platform>1.10.1</junit-platform>
+        <java-appium>8.6.0</java-appium>
         <lombok.version>1.18.30</lombok.version>
         <log4j.version>2.22.0</log4j.version>
         <tags></tags>
@@ -111,7 +112,7 @@
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
-            <version>9.0.0</version>
+            <version>${java-appium}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
@@ -181,12 +182,12 @@
             <version>11.2.2.jre17</version>
         </dependency>
 
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-http-jdk-client &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.seleniumhq.selenium</groupId>-->
-<!--            <artifactId>selenium-http-jdk-client</artifactId>-->
-<!--            <version>4.13.0</version>-->
-<!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-http-jdk-client -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-http-jdk-client</artifactId>
+            <version>4.12.1</version>
+        </dependency>
 
     </dependencies>
 
