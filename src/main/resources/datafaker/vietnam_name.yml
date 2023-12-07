@@ -1,0 +1,29 @@
+en:
+  faker:
+    vietnamese_name:
+      male_first_name:
+        - "Dương"
+        - "Long"
+        - "Phong"
+        - "Hoàng"
+        - "Giang"
+      female_first_name:
+        - "Ngà"
+        - "Ngọc"
+        - "Vân"
+      first_name:
+        - "#{vietnamese_name.female_first_name}"
+        - "#{vietnamese_name.male_first_name}"
+      middle_name:
+        - "Đức"
+        - "Văn"
+        - "Thị"
+        - "Quỳnh"
+        - "Đình"
+      last_name:
+        - "Nguyễn"
+        - "Trần"
+        - "Lê"
+        - "Diêm"
+      full_name:
+        - "#{vietnamese_name.last_name} #{vietnamese_name.middle_name} #{vietnamese_name.first_name}"

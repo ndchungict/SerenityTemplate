@@ -1,0 +1,51 @@
+en:
+  faker:
+    vietnam_phone_number:
+      viettel:
+      - "086"
+      - "096"
+      - "097"
+      - "098"
+      - "039"
+      - "038"
+      - "037"
+      - "036"
+      - "035"
+      - "034"
+      - "033"
+      - "032"
+      vinaphone:
+      - "091"
+      - "094"
+      - "088"
+      - "083"
+      - "084"
+      - "085"
+      - "081"
+      - "082"
+      mobiphone:
+      - "070"
+      - "079"
+      - "077"
+      - "076"
+      - "078"
+      - "089"
+      - "090"
+      - "093"
+      vietnamobile:
+      - "092"
+      - "052"
+      - "056"
+      - "058"
+      gmobile:
+      - "099"
+      - "059"
+      itelecom:
+      - "087"
+      mobile_prefix:
+      - "#{vietnam_phone_number.viettel}"
+      - "#{vietnam_phone_number.vinaphone}"
+      - "#{vietnam_phone_number.mobiphone}"
+      - "#{vietnam_phone_number.vietnamobile}"
+      - "#{vietnam_phone_number.gmobile}"
+      - "#{vietnam_phone_number.itelecom}"
