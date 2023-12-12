@@ -3,14 +3,11 @@ package ts;
 import lombok.extern.log4j.Log4j2;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-import net.serenitybdd.screenplay.actions.Browser;
-import net.serenitybdd.screenplay.actions.Open;
-import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.annotations.CastMember;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import pages.TopMenu;
 import tasks.Navigate;
 
 @Log4j2
@@ -21,13 +18,11 @@ public class SerenityJunitTest {
 
     @Test
     void testFunction01(){
-        log.info("Zo");
         chung.attemptsTo(
-                Navigate.toTheHomePage()
+                Navigate.toTheHomePage(),
+                Ensure.that(TopMenu.SHOP_MENU).isDisplayed(),
+                Navigate.toShopPage(),
+                Navigate.toHomeMenuOnTheShopPage()
         );
-        chung.attemptsTo(
-                Ensure.that(1).isGreaterThan(0)
-        );
-
     }
 }
