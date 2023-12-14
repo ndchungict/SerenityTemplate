@@ -1,7 +1,6 @@
 package pages;
 
 import net.serenitybdd.screenplay.targets.Target;
-import net.serenitybdd.screenplay.ui.Link;
 import org.openqa.selenium.By;
 
 public class TopMenu {

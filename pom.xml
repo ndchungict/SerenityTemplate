@@ -20,6 +20,7 @@
         <java-appium>8.6.0</java-appium>
         <lombok.version>1.18.30</lombok.version>
         <log4j.version>2.22.0</log4j.version>
+        <gson.version>2.10.1</gson.version>
         <tags></tags>
         <webdriver.base.url></webdriver.base.url>
     </properties>
@@ -193,6 +194,13 @@
             <artifactId>cucumber-java</artifactId>
             <version>7.14.0</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
         </dependency>
 
     </dependencies>
